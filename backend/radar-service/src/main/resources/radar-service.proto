@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_package = "ma.enset.radarservice.web.grpc.stubs";
+
+import "google/protobuf/empty.proto";
+
+message SpeedViolation {
+  string radarId = 1;
+  string vehicleRegistrationNumber = 2;
+  int32 vehicleSpeed = 3;
+}
+
+message GenerateSpeedViolationRequest {
+  int32 numberOfViolations = 1;
+}
+
+service RadarService {
+  rpc GenerateSpeedViolations(GenerateSpeedViolationRequest) returns (stream SpeedViolation);
+}

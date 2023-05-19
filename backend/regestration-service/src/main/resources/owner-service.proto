@@ -1,0 +1,41 @@
+// add proto compiler plugin to pom.xml file
+// mvn validate + mvn package to compile proto file
+syntax = "proto3";
+option java_package = "ma.enset.regestrationservice.web.grpc.stub";
+
+import "google/protobuf/timestamp.proto";
+
+message Owner {
+  int64 id = 1;
+  string name = 2;
+  google.protobuf.Timestamp birthDate = 3;
+  string email = 4;
+}
+
+service OwnerGrpcService {
+  rpc getOwner(GetOwnerRequest) returns (GetOwnerResponse);
+  rpc listOwners(GetAllOwnersRequest) returns (GetAllOwnersResponse);
+  rpc saveOwner(SaveOwnerRequest) returns (SaveOwnerResponse);
+}
+
+message GetOwnerRequest {
+  int64 id = 1;
+}
+
+message GetOwnerResponse {
+  Owner owner = 1;
+}
+
+message GetAllOwnersRequest {}
+
+message GetAllOwnersResponse {
+  repeated Owner owners = 1;
+}
+
+message SaveOwnerRequest {
+  Owner owner = 1;
+}
+
+message SaveOwnerResponse {
+  Owner owner = 1;
+}

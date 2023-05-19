@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="radar" />
+        <module name="radar-device" />
+        <module name="radar-service" />
+        <module name="eureka-discovery" />
+        <module name="regestration-service" />
+        <module name="gateway" />
+        <module name="infraction-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-discovery" target="17" />
+      <module name="gateway" target="17" />
+      <module name="infraction-service" target="17" />
+      <module name="radar" target="17" />
+      <module name="radar-device" target="17" />
+      <module name="radar-service" target="17" />
+      <module name="regestration-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-discovery" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="infraction-service" options="-parameters" />
+      <module name="radar-device" options="-parameters" />
+      <module name="radar-service" options="-parameters" />
+      <module name="regestration-service" options="-parameters" />
+    </option>
+  </component>
+</project>

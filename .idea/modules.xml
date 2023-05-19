@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/eureka-discovery/eureka-discovery.iml" filepath="$PROJECT_DIR$/backend/eureka-discovery/eureka-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/gateway/gateway.iml" filepath="$PROJECT_DIR$/backend/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/infraction-service/infraction-service.iml" filepath="$PROJECT_DIR$/backend/infraction-service/infraction-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/radar/radar.iml" filepath="$PROJECT_DIR$/backend/radar/radar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/radar-device/radar-device.iml" filepath="$PROJECT_DIR$/backend/radar-device/radar-device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/radar-service/radar-service.iml" filepath="$PROJECT_DIR$/backend/radar-service/radar-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/regestration-service/regestration-service.iml" filepath="$PROJECT_DIR$/backend/regestration-service/regestration-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vehicle-violation-process.iml" filepath="$PROJECT_DIR$/.idea/vehicle-violation-process.iml" />
+    </modules>
+  </component>
+</project>

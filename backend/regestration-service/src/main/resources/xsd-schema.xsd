@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws" xmlns:tns="http://ws">
+
+    <xsd:element name="GetOwnerRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:long" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="GetOwnerResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="owner" type="tns:Owner" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Owner">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:long" />
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="birthDate" type="xsd:date" />
+            <xsd:element name="email" type="xsd:string" />
+            <xsd:element name="vehicles" type="tns:VehicleList" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="VehicleList">
+        <xsd:sequence>
+            <xsd:element name="vehicle" type="tns:Vehicle" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Vehicle">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:long" />
+            <xsd:element name="regestrationNumber" type="xsd:string" />
+            <xsd:element name="brand" type="xsd:string" />
+            <xsd:element name="fiscalPower" type="xsd:double" />
+            <xsd:element name="model" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

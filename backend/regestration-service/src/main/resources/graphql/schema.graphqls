@@ -1,0 +1,45 @@
+type Query {
+    # Owners
+    getVehicles : [Vehicle]
+    getVehicleById(id: Int) : Vehicle
+
+    # Vehicles
+    getOwners : [Owner]
+    getOwnerById(id: Int) : Owner
+}
+
+type Mutation {
+    # Owners
+    #addVehicle(vehicle:Vehicle) : Vehicle
+    #updateVehicle(id:String, vehicle:Vehicle) : Vehicle
+    deleteVehicle(id:String) : Boolean
+
+    # Vehicles
+    ddOwner(owner:OwnerRequest) : Owner
+    #updateOwner(id:String, owner:Owner) : Owner
+    deleteOwner(id:String) : Boolean
+}
+
+type Owner {
+    id : Int
+    name : String
+    birthDate : String
+    email : String
+    vehicles : [Vehicle]
+}
+
+input OwnerRequest {
+    name : String
+    birthDate : String
+    email : String
+}
+
+type Vehicle {
+    id : Int
+    regestrationNumber : String
+    brand : String
+    fiscalPower : String
+    model : String
+    owner : Owner
+}
+

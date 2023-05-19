@@ -1,0 +1,590 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8083",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/profile": {
+            "get": {
+                "tags": [
+                    "profile-controller"
+                ],
+                "operationId": "listAllFormsOfMetadata_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RepresentationModelObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/radars": {
+            "get": {
+                "tags": [
+                    "profile-controller"
+                ],
+                "operationId": "descriptor_1_1_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/alps+json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/schema+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonSchema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/radars": {
+            "get": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "get-radar",
+                "operationId": "getCollectionResource-radar-get_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Zero-based page index (0..N)",
+                        "required": false,
+                        "schema": {
+                            "minimum": 0,
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "The size of the page to be returned",
+                        "required": false,
+                        "schema": {
+                            "minimum": 1,
+                            "type": "integer",
+                            "default": 20
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PagedModelEntityModelRadar"
+                                }
+                            },
+                            "application/x-spring-data-compact+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PagedModelEntityModelRadar"
+                                }
+                            },
+                            "text/uri-list": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "create-radar",
+                "operationId": "postCollectionResource-radar-post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RadarRequestBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/radars/{id}": {
+            "get": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "get-radar",
+                "operationId": "getItemResource-radar-get",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "update-radar",
+                "operationId": "putItemResource-radar-put",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RadarRequestBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "delete-radar",
+                "operationId": "deleteItemResource-radar-delete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "radar-entity-controller"
+                ],
+                "description": "patch-radar",
+                "operationId": "patchItemResource-radar-patch",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RadarRequestBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/api/radar/newInfraction": {
+            "post": {
+                "tags": [
+                    "radar-rest-controller"
+                ],
+                "operationId": "newInfraction",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/radar/rads": {
+            "get": {
+                "tags": [
+                    "radar-rest-controller"
+                ],
+                "operationId": "getRadars",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/hal+json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Radar"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AbstractJsonSchemaPropertyObject": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "readOnly": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/AbstractJsonSchemaPropertyObject"
+                        }
+                    },
+                    "requiredProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "JsonSchema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/AbstractJsonSchemaPropertyObject"
+                        }
+                    },
+                    "requiredProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "definitions": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/Item"
+                        }
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "$schema": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Links": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/Link"
+                }
+            },
+            "RepresentationModelObject": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "$ref": "#/components/schemas/Links"
+                    }
+                }
+            },
+            "Radar": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "maxSpeed": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "EntityModelRadar": {
+                "type": "object",
+                "properties": {
+                    "maxSpeed": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "_links": {
+                        "$ref": "#/components/schemas/Links"
+                    }
+                }
+            },
+            "PageMetadata": {
+                "type": "object",
+                "properties": {
+                    "size": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PagedModelEntityModelRadar": {
+                "type": "object",
+                "properties": {
+                    "_embedded": {
+                        "type": "object",
+                        "properties": {
+                            "radars": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/EntityModelRadar"
+                                }
+                            }
+                        }
+                    },
+                    "_links": {
+                        "$ref": "#/components/schemas/Links"
+                    },
+                    "page": {
+                        "$ref": "#/components/schemas/PageMetadata"
+                    }
+                }
+            },
+            "RadarRequestBody": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "maxSpeed": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "NewData": {
+                "type": "object",
+                "properties": {
+                    "radarId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "rn": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Link": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "type": "string"
+                    },
+                    "hreflang": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "deprecation": {
+                        "type": "string"
+                    },
+                    "profile": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "templated": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    }
+}
