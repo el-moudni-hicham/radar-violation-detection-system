@@ -15,7 +15,7 @@ type Mutation {
     deleteVehicle(id:String) : Boolean
 
     # Vehicles
-    ddOwner(owner:OwnerRequest) : Owner
+    addOwner(owner:OwnerRequest) : Owner
     #updateOwner(id:String, owner:Owner) : Owner
     deleteOwner(id:String) : Boolean
 }

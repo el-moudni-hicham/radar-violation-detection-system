@@ -20,60 +20,28 @@ public class VehicleRestController {
         this.vehicleRepository = vehicleRepository;
     }
 
-
-
-    @GetMapping("/pageVehicle")
-    public Page<Vehicle> getPageVehicle(
-            @RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "5") int size) {
-
-        Pageable pageable = PageRequest.of(page, size);
-        return vehicleRepository.findAll(pageable);
-    }
-
-    @GetMapping("/pageVehicleName/{keyword}")
-    public Page<Vehicle> getVehiclesByName(@PathVariable String keyword,
-                                       @RequestParam(value = "page", defaultValue = "0") int page,
-                                       @RequestParam(value = "size", defaultValue = "5") int size) {
-
-        Pageable pageable = PageRequest.of(page, size);
-
-        if (keyword.equals(null)) return vehicleRepository.findAll(pageable);
-        return vehicleRepository.findByRegestrationNumberContaining(keyword, pageable);
-    }
-
-    @GetMapping("/count")
-    public Long getVehiclesCount() {
-        return vehicleRepository.count();
-    }
-
-
-    @GetMapping("/vehicleByRn/{rn}")
-    public Vehicle getByRegestrationNumber(@PathVariable String rn){
-        return vehicleRepository.findVehicleByRegestrationNumber(rn);
-    }
     // Operations in Vehicles
 
-    // - Get all vehicles
+    // Get all vehicles
     @GetMapping("/vehicles")
     public List<Vehicle> getVehicles(){
         return vehicleRepository.findAll();
     }
 
-    // - Get vehicle by id
+    // Get vehicle by id
     @GetMapping("/vehicles/{id}")
     public Vehicle getVehicleById(@PathVariable Long id){
         return vehicleRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(String.format("Vehicle %s not found !", id)));
     }
 
-    // - Get all vehicles
+    // Get all vehicles
     @PostMapping("/vehicles")
     public Vehicle saveVehicle(@RequestBody Vehicle vehicle){
         return vehicleRepository.save(vehicle);
     }
 
-    // - Update vehicle
+    // Update vehicle
     @PutMapping ("/vehicles/{id}")
     public Vehicle updateVehicle(@PathVariable Long id, @RequestBody Vehicle vehicle){
         Vehicle v = vehicleRepository.findById(id)
@@ -88,10 +56,44 @@ public class VehicleRestController {
         return vehicleRepository.save(v);
     }
 
-    // - Delete vehicle
+    // Delete vehicle
     @DeleteMapping("/vehicles/{id}")
     public void deleteVehicle(@PathVariable Long id){
         vehicleRepository.deleteById(id);
+    }
+
+    // Get all vehicle pages
+    @GetMapping("/pageVehicle")
+    public Page<Vehicle> getPageVehicle(
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "5") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        return vehicleRepository.findAll(pageable);
+    }
+
+    // Search vehicles pages by regestration number containing
+    @GetMapping("/pageVehicleName/{keyword}")
+    public Page<Vehicle> getVehiclesByName(@PathVariable String keyword,
+                                           @RequestParam(value = "page", defaultValue = "0") int page,
+                                           @RequestParam(value = "size", defaultValue = "5") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+
+        if (keyword.equals(null)) return vehicleRepository.findAll(pageable);
+        return vehicleRepository.findByRegestrationNumberContaining(keyword, pageable);
+    }
+
+    // Get number of all vehicles
+    @GetMapping("/count")
+    public Long getVehiclesCount() {
+        return vehicleRepository.count();
+    }
+
+    // Get vehicle by regestration number
+    @GetMapping("/vehicleByRn/{rn}")
+    public Vehicle getByRegestrationNumber(@PathVariable String rn){
+        return vehicleRepository.findVehicleByRegestrationNumber(rn);
     }
 
 }

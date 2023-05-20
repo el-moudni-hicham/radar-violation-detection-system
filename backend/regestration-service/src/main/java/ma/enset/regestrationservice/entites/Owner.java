@@ -1,16 +1,18 @@
 package ma.enset.regestrationservice.entites;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.protobuf.Timestamp;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.web.bind.annotation.Mapping;
 
 import java.util.Date;
 import java.util.List;
 
+// Create Owner Entity
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString(exclude = "vehicles", includeFieldNames = false)
 public class Owner {
     @Id
@@ -21,6 +23,7 @@ public class Owner {
     private String email;
 
     @Transient
+    // EAGER == Load vehicles on same time
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Vehicle> vehicles;

@@ -1,10 +1,8 @@
-package ma.enset.infractionservice.models;
+package ma.enset.radarroad.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
 public class Radar {
     private Long id;
     private String name;

@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/backend/radar-service/pom.xml" />
         <option value="$PROJECT_DIR$/backend/regestration-service/pom.xml" />
         <option value="$PROJECT_DIR$/backend/radar-device/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/radar-road/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/road-radar/pom.xml" />
       </list>
     </option>
   </component>

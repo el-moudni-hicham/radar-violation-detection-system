@@ -72,30 +72,4 @@ public class OwnerGrpcService extends OwnerGrpcServiceGrpc.OwnerGrpcServiceImplB
         responseObserver.onCompleted();
     }
 
-   /* @Override
-    public void saveOwner(SaveOwnerRequest request, StreamObserver<SaveOwnerResponse> responseObserver) {
-        OwnerService.Owner grpcOwner = request.getOwner();
-
-        Owner owner = new Owner();
-        owner.setId(grpcOwner.getId());
-        owner.setName(grpcOwner.getName());
-        owner.setBirthDate(new Date(grpcOwner.getBirthDate()));
-        owner.setEmail(grpcOwner.getEmail());
-
-        Owner savedOwner = ownerRepository.save(owner);
-
-        OwnerService.Owner savedGrpcOwner = OwnerService.Owner.newBuilder()
-                .setId(savedOwner.getId())
-                .setName(savedOwner.getName())
-                .setBirthDate(savedOwner.getBirthDate().getTime()) // Assuming the birthDate is a java.util.Date
-                .setEmail(savedOwner.getEmail())
-                .build();
-
-        SaveOwnerResponse response = SaveOwnerResponse.newBuilder()
-                .setOwner(savedGrpcOwner)
-                .build();
-
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
-    }*/
 }

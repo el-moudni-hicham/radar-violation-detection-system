@@ -7,6 +7,10 @@ import ma.enset.infractionservice.models.NewData;
 import ma.enset.infractionservice.models.Radar;
 import ma.enset.infractionservice.models.Vehicle;
 import ma.enset.infractionservice.repositories.InfractionRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,6 +69,49 @@ public class InfractionRestController {
         return infractions;
     }
 
+    @GetMapping("/count")
+    public Long getInfractionsCount() {
+        return infractionRepository.count();
+    }
+
+
+    @GetMapping(path = "/fullInfractionsPages")
+    public Page<Infraction> getFullInfractions(
+            @RequestParam(value = "page") int page,
+            @RequestParam(value = "size") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Infraction> infractionsPage = infractionRepository.findAll(pageable);
+        List<Infraction> infractions = infractionsPage.getContent();
+        infractions.forEach(infraction -> {
+            Vehicle vehicle = vehicleRestClient.getByRegestrationNumber(infraction.getVehicleMatricule());
+            infraction.setVehicle(vehicle);
+
+            Radar radar = radarRestClient.getByRadarById(infraction.getRadarId());
+            radar.setId(infraction.getRadarId());
+            infraction.setRadar(radar);
+        });
+        long totalElements = infractionsPage.getTotalElements();
+
+        return new PageImpl<>(infractions, pageable,totalElements);
+    }
+
+    @GetMapping(path = "/PageInfraction")
+    public List<Infraction> getFullInPagefractions( @RequestParam(value = "page", defaultValue = "0") int page,
+                                                    @RequestParam(value = "size", defaultValue = "5") int size){
+        List<Infraction> infractions = infractionRepository.findAll();
+        infractions.forEach(infraction -> {
+            Vehicle vehicle = vehicleRestClient.getByRegestrationNumber(infraction.getVehicleMatricule());
+            infraction.setVehicle(vehicle);
+
+            Radar radar = radarRestClient.getByRadarById(infraction.getRadarId());
+            radar.setId(infraction.getRadarId());
+            infraction.setRadar(radar);
+
+        });
+
+        Pageable pageable = PageRequest.of(page, size);
+        return infractions;
+    }
 
 
 
