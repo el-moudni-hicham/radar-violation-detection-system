@@ -9,13 +9,13 @@ The backend is built using Spring Boot , while the frontend is built using Angul
 interface.
 ```
 
-## Table of Contents       
-- [Getting Started](getting-started)
-    -[Prerequisites](prerequisites)
-    -[Installation](installation)
-- [Features](features)
-- [Technologies Used](technologies-used)
-- [License](license) 
+# Table of Contents       
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [License](#license) 
 
 
 ## Getting Started    
