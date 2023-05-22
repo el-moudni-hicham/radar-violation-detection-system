@@ -82,7 +82,7 @@ The application allows performing the following operations:
 
 ## Technical Architecture
 
-<img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/f49b19b6-7f95-4f45-8b65-1060db7d9dc7" width="90%">
+<img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/f49b19b6-7f95-4f45-8b65-1060db7d9dc7">
 
 ## Class Diagram 
 
