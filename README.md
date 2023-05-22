@@ -1,10 +1,9 @@
-
 # Radar Violation Detection System
 
 ```
 This is a web-based application built using Spring Boot and Angular. It is a radar violation detection
 system It aims to detect and track radar violations, providing real-time notifications and reporting
-reporting for efficient traffic management. 
+reporting for efficient traffic management.
 The backend is built using Spring Boot , while the frontend is built using Angular with Bootstrap for
 the user interface.
 
@@ -21,9 +20,9 @@ vehicle owners to view their own violations, providing them with easy access to 
 - [Technical Architecture](#technical-architecture)
 - [Class Diagram](#class-diagram)
 - [Services](#getting-started)
-  - [Regestration Service](#regestration-service)
-  - [Radar Service](#radar-service)
-  - [Infraction Service](#infraction-service)
+    - [Regestration Service](#regestration-service)
+    - [Radar Service](#radar-service)
+    - [Infraction Service](#infraction-service)
 - [License](#license)
 
 
@@ -32,9 +31,9 @@ vehicle owners to view their own violations, providing them with easy access to 
 Before running this application, you need to have the following software installed on your system :
 
 ```java
-- Java Development Kit (JDK) version 11 or later  
-- Node.js version 14 or later  
-- Angular CLI version 13 or later   
+- Java Development Kit (JDK) version 11 or later
+- Node.js version 14 or later
+- Angular CLI version 13 or later
 ```
 
 ### Installation
@@ -43,19 +42,19 @@ Follow these steps to install and run the application :
 1. Clone the repository :
 ```
 git clone https://github.com/el-moudni-hicham/radar-violation-detection-system.git
-```    
+```
 2. Navigate to the backend directory and run the following command to start the each Spring Boot project :
-```  
-./mvnw spring-boot:run   
-```    
+```
+./mvnw spring-boot:run
+```
 3. Navigate to the frontend directory and run the following command to install the required packages :
-```    
-npm install   
-```    
+```
+npm install
+```
 4. After the packages are installed, run the following command to start the Angular application :
-```    
-ng serve   
-```    
+```
+ng serve
+```
 5. Open your browser and navigate to `http://localhost:4200` to access the application.
 
 ## Technologies Used
@@ -71,19 +70,19 @@ The following technologies and frameworks are used in this application:
 ## Functionalities
 
 The application allows performing the following operations:
-    - Submit a speeding violation.
-    - View violations of a vehicle owner.
-    - Modify and view radar data.
-    - Modify and view vehicle and owner data.
-    - Modify and view offense data.
+- Submit a speeding violation.
+- View violations of a vehicle owner.
+- Modify and view radar data.
+- Modify and view vehicle and owner data.
+- Modify and view offense data.
 
 ## Technical Architecture
 
-<img width="90%" src="projet-archi.png">
+<img src="projet-archi.png" width="90%">
 
 ## Class Diagram
 
-<img width="70%" src="backend.png">
+<img src="backend.png" width="70%">
 
 ## Services
 
@@ -96,7 +95,7 @@ Registration microservice manages vehicles owned by owners. Each vehicle belongs
 An owner is defined by their ID, name, date of birth, email.
 A vehicle is defined by its ID, regestration number, brand, fiscal power, and model
 ```
-- 1.Service Structure
+- Service Structure
 <pre>
 
 ├───src
@@ -151,70 +150,123 @@ A vehicle is defined by its ID, regestration number, brand, fiscal power, and mo
 
 </pre>
 - Web services integration REST, GraphQL, SOAP et GRPC :
-    - a. REST :
-    
 
-<table>
-<tr>
-<td >
-          <h5 align="center">All Vehicles</h3>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/77beb752-739f-47fd-845f-c666ea4ab362" alt="project example"/>
-            </p>
- </td>
+ > a. REST :
+
+Tests with `Postman`
+
+<table> 
+    <tr>
+        <td >
+            <h5 align="center">All Vehicles</h3>
+                <p align="center">
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/77beb752-739f-47fd-845f-c666ea4ab362" alt="project example"/>
+                </p>
+        </td>
     </tr>
     <tr>
- <td >
-          <h5 align="center">Find Vehicle By Id</h3>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/4b2cf16c-1340-4404-8cec-1bcdc51f524c" alt="project example"/>
-            </p>
- </td>
-</tr>
+        <td >
+            <h5 align="center">Find Vehicle By Id</h3>
+                <p align="center">
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/4b2cf16c-1340-4404-8cec-1bcdc51f524c" alt="project example"/>
+                </p>
+        </td>
+    </tr>
+</table>
 
-<tr>
-<td >
-          <h5 align="center">Delete Vehicle</h5>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7a2c7083-7539-4dcd-b506-3556fec50c3a" alt="project example"/>
-            </p>
-                                                                                                                                                   
- </td>
+<table> 
+    <tr>
+        <td >
+            <h5 align="center">Delete Vehicle</h3>
+                <p align="center">
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7a2c7083-7539-4dcd-b506-3556fec50c3a" alt="project example"/>
+                </p>
+        </td>
     </tr>
     <tr>
- <td >
-          <h5 align="center">Update Vehicle<h5>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/270691bf-1f79-446c-9359-20fec739881c" alt="project example"/>
-            </p>
- </td>
-</tr>
+        <td >
+            <h5 align="center">Update Vehicle</h3>
+                <p align="center">
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/270691bf-1f79-446c-9359-20fec739881c" alt="project example"/>
+                </p>
+        </td>
+    </tr>
 </table>
 
 
-
-    - b. GraphQL :
+ > b. GraphQL :
 <table>
-<tr>
-<td >
-          <h5 align="center">All Vehicles with specific attributs </h3>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/e29db325-f14f-4d6a-9916-0ee1d1760da0" alt="project example"/>
-            </p>
- </td>
+    <tr>
+        <td>
+            <h5 align="center">All Vehicles with specific attributs </h3>
+                <p align="center">
+                    <img alt="project example"
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/e29db325-f14f-4d6a-9916-0ee1d1760da0"/>
+                </p>
+        </td>
     </tr>
     <tr>
- <td >
-          <h5 align="center">Find Vehicle By Id with specific attributs</h3>
-          <p align="center">
-             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/15f188ac-d384-455d-a8ed-91363143f97f" alt="project example"/>
-            </p>
- </td>
-</tr>
+        <td>
+            <h5 align="center">Find Vehicle By Id with specific attributs</h3>
+                <p align="center">
+                    <img alt="project example"
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/15f188ac-d384-455d-a8ed-91363143f97f"/>
+                </p>
+        </td>
+    </tr>
 </table>
 
-    - c. SOAP :
-    - d. GRPC :
+ > c. SOAP :
+ 
+Tests with `SoapUI`
+<table>
+    <tr>
+        <td>
+            <h5 align="center">All Owners </h3>
+                <p align="center">
+                    <img alt="project example"
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7a01b2b9-3807-43e1-884d-8c0cbfcbb994"/>
+                </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h5 align="center">Find Owner By Id</h3>
+                <p align="center">
+                    <img alt="project example"
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/52bc6d85-1dc1-4f00-b9da-701d500a8b4a"/>
+                </p>
+        </td>
+    </tr>
+</table>
+
+ > d. GRPC :
+
+Tests with `BloomRPC`
+
+<table>
+    <tr>
+        <td>
+            <h5 align="center">All Owners</h3>
+                <p align="center">
+                    <img alt="project example"
+               src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/abc8437c-d043-4821-b684-0a27917cb13c"/>
+                </p>
+                
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h5 align="center">Find Owner By Id</h3>
+            <p align="center">
+                    <img alt="project example"
+          src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7b33bad2-3ac7-415d-ab60-33d3ae23b08e"/>
+            </p>
+        </td>
+    </tr>
+</table>
+
+
 
 ####
 
