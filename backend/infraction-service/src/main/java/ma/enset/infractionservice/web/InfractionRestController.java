@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RestResource
@@ -32,20 +33,27 @@ public class InfractionRestController {
     }
 
 
-    // - Save owner
+    // - Save Infraction
    @PostMapping("/saveInfraction")
     public Infraction saveInfraction(@RequestBody NewData newData){
         Vehicle v = vehicleRestClient.getByRegestrationNumber(newData.getRn());
         Radar r = radarRestClient.getByRadarById(newData.getRadarId());
         r.setId(newData.getRadarId());
 
+        /*double amount;
+        if(newData.getVehicleSpeed() > r.getMaxSpeed()) amount = 500;
+        else if(newData.getVehicleSpeed() > (r.getMaxSpeed()+20)) amount = 750;
+        else if(newData.getVehicleSpeed() > (r.getMaxSpeed()+40)) amount = 850;
+        else amount = 1000;*/
+
         Infraction infraction = Infraction.builder()
                 .vehicle(v)
                 .radar(r)
+                .paid(false)
                 .vehicleSpeed(newData.getVehicleSpeed())
                 .vehicleMatricule(newData.getRn())
                 .radarId(newData.getRadarId())
-                .infractionAmount(3000)
+                .infractionAmount(new Random().nextInt(1000))
                 .date(new Date())
                 .radarMaxSpeed(r.getMaxSpeed())
                 .build();

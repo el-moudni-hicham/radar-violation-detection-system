@@ -11,6 +11,5 @@ public class Vehicle {
     private String brand;
     private Double fiscalPower;
     private String model;
-
     private Owner owner;
 }

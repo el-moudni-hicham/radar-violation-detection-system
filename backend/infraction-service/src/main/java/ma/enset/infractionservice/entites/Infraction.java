@@ -17,6 +17,8 @@ public class Infraction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
+
+    private boolean paid;
     private Long radarId;
     private String vehicleMatricule;
     @Transient

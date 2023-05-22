@@ -27,6 +27,7 @@ public class RadarServiceApplication {
             Stream.of("R1", "R2", "R3", "R4", "R5", "R6","R7", "R8").forEach(i -> {
                 Radar radar = Radar.builder()
                         .name(i)
+                        .status(true)
                         .maxSpeed(120)
                         .latitude(random.nextDouble(10))
                         .longitude(random.nextDouble(10))

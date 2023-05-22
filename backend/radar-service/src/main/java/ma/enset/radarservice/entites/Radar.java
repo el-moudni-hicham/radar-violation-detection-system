@@ -1,13 +1,8 @@
 package ma.enset.radarservice.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
 
 @Entity
@@ -17,7 +12,10 @@ public class Radar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    private boolean status;
     private int maxSpeed = 120;
     private double longitude;
     private double latitude;
+
 }

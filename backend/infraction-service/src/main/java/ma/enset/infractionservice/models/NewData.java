@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 public class NewData {
     private Long radarId;
     private String rn;
-
     private double vehicleSpeed;
 
 
