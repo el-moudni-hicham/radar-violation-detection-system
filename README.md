@@ -482,52 +482,51 @@ Test
     </tr>
 </table>
 
-<table> 
-    <tr>
+
+<table>
+<tr>
         <td >
                 <p align="center">
-                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/212c815e-853a-4c31-a4db-695ad8ea46fc" alt="project example"/>
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/d3f1c38a-349b-4afc-be32-6a48ce1cc105" alt="project example"/>
                 </p>
         </td>
     </tr>
     <tr>
         <td >
                 <p align="center">
-                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/62a7c75a-116c-4f7d-84c0-4a2cdfa207a1" alt="project example"/>
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/df5a0b4e-d3c2-458d-aa82-98d985447ee9" alt="project example"/>
                 </p>
         </td>
     </tr>
-   
 </table>
 
 <table>
 <tr>
         <td >
                 <p align="center">
-                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/8287e677-e027-4f0c-ad20-be6a50ba7fa7" alt="project example"/>
-                </p>
-        </td>
-    <td >
-                <p align="center">
-                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/8287e677-e027-4f0c-ad20-be6a50ba7fa7" alt="project example"/>
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/30068f49-7b6d-47b7-a730-763e6116a311" alt="project example"/>
                 </p>
         </td>
     </tr>
     <tr>
         <td >
                 <p align="center">
-                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/bb9aad80-0ec5-4afe-8dbc-e14d61824e0d" alt="project example"/>
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/30e08ef6-a881-4358-a458-548eedfb879c" alt="project example"/>
                 </p>
         </td>
     </tr>
 </table>
 
 
-![image](https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/d3f1c38a-349b-4afc-be32-6a48ce1cc105)
-![image](https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/df5a0b4e-d3c2-458d-aa82-98d985447ee9)
-![image](https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/30068f49-7b6d-47b7-a730-763e6116a311)
-![image](https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/30e08ef6-a881-4358-a458-548eedfb879c)
-![image](https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/916ead93-b5b0-47e4-802f-5947ecf9d223)
+<table>
+<tr>
+        <td >
+                <p align="center">
+                    <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/916ead93-b5b0-47e4-802f-5947ecf9d223" alt="project example"/>
+                </p>
+        </td>
+    </tr>
+</table>
 
 ## Licence
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
