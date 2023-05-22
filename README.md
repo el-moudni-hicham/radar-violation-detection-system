@@ -10,12 +10,12 @@ interface.
 ```
 
 ## Table of Contents       
-* [Getting Started](getting-started)
-* [Prerequisites](prerequisites)
-* [Installation](installation)
-* [Features](features)
-* [Technologies Used](technologies-used)
-* [License](license) 
+- [Getting Started](getting-started)
+    -[Prerequisites](prerequisites)
+    -[Installation](installation)
+- [Features](features)
+- [Technologies Used](technologies-used)
+- [License](license) 
 
 
 ## Getting Started    
