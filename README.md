@@ -331,5 +331,73 @@ the vehicle's speed, the radar's maximum speed limit, and the fine amount.
 │   │       └───templates
 </pre>
 
+### Eureka Discovery Service 
+- Service Structure
+<pre>
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───ma
+│   │   │       └───enset
+│   │   │           └───eurekadiscovery
+│   │   │                   EurekaDiscoveryApplication.java
+│   │   │
+│   │   └───resources
+│   │           application.properties
+│   │
+│   └───test
+│       └───java
+│           └───ma
+│               └───enset
+│                   └───eurekadiscovery
+│                           EurekaDiscoveryApplicationTests.java
+│
+</pre>
+
+### Gateway Service 
+Spring Cloud Gateway
+
+- Service Structure
+<pre>
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───ma
+│   │   │       └───enset
+│   │   │           └───gateway
+│   │   │                   GatewayApplication.java
+│   │   │
+│   │   └───resources
+│   │           application.properties
+│   │           application.yml
+</pre>
+
+### Road Radar
+
+- Service Structure
+<pre>
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───ma
+│   │   │       └───enset
+│   │   │           └───radarroad
+│   │   │               │   RadarDetectionService.java
+│   │   │               │   RadarRoadApplication.java
+│   │   │               │
+│   │   │               └───models
+│   │   │                       NewData.java
+│   │   │                       Radar.java
+│   │   │                       Vehicle.java
+│   │   │
+│   │   └───resources
+│   │       │   application.properties
+│   │       │
+│   │       ├───static
+│   │       └───templates
+</pre>
+
+
+
 ## Licence
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
