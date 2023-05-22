@@ -85,7 +85,7 @@ The application allows performing the following operations:
 
 ## Technical Architecture
 
-<img src="projet-archi.png" width="90%">
+<img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/blob/master/projet-archi.png?raw=true" width="90%">
 
 ## Class Diagram
 
