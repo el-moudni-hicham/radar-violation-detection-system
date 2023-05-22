@@ -13,8 +13,8 @@ interface.
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
-- [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Project Architecture](#Project-Architecture)
 - [License](#license) 
 
 
@@ -22,17 +22,20 @@ interface.
 ### Prerequisites  
 Before running this application, you need to have the following software installed on your system:    
 
+```java
 - Java Development Kit (JDK) version 11 or later  
 - Node.js version 14 or later  
 - Angular CLI version 13 or later   
+```
+
 ### Installation  
 Follow these steps to install and run the application:
 
 1. Clone the repository:   
-```  
-git clone https://github.com/Abdellah-belcaid/book-store-management.git
+```
+git clone https://github.com/el-moudni-hicham/radar-violation-detection-system.git
 ```    
-2. Navigate to the backend directory and run the following command to start the Spring Boot application:   
+2. Navigate to the backend directory and run the following command to start the each Spring Boot project:   
 ```  
 ./mvnw spring-boot:run   
 ```    
@@ -44,36 +47,20 @@ npm install
 ```    
 ng serve   
 ```    
-5. Open your browser and navigate to http://localhost:4200 to access the application.     
+5. Open your browser and navigate to `http://localhost:4200` to access the application.     
 
-### Features   
-The following features are implemented in this application:    
-
-- User authentication using JWT  
-- Authorization and role-based access control using Spring Security   
-- CRUD operations for books and authors   
-- Ordering books    
-- Responsive UI using Angular Material  
-### Technologies Used   
+## Technologies Used   
 The following technologies and frameworks are used in this application:
 
 - Spring Boot  
-- Spring Security  
-- JWT  
+- Spring Cloud 
+- Eureka Descovery
 - Angular 
-- Angular Material  
+- Bootstrap 
 - MySQL 
-### Contributing  
-If you want to contribute to this project, please follow these steps:
+ 
 
-1. Fork the repository  
-2. Create a new branch (git checkout -b feature/your-feature)  
-3. Make changes and commit them (git commit -m 'Add your feature')   
-4. Push the changes to your branch (git push origin feature/your-feature)   
-5. Create a pull request   
-# License  
-- This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
-## 1. Project Architecture
+## Project Architecture
 
 ![projet-archi.png](projet-archi.png)
 
