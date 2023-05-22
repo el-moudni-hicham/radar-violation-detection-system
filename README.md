@@ -14,13 +14,13 @@ interface.
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Technologies Used](#technologies-used)
-- [Project Architecture](#Project-Architecture)
+- [Project Architecture](#project-architecture)
 - [License](#license) 
 
 
 ## Getting Started    
 ### Prerequisites  
-Before running this application, you need to have the following software installed on your system:    
+Before running this application, you need to have the following software installed on your system :    
 
 ```java
 - Java Development Kit (JDK) version 11 or later  
@@ -29,21 +29,21 @@ Before running this application, you need to have the following software install
 ```
 
 ### Installation  
-Follow these steps to install and run the application:
+Follow these steps to install and run the application :
 
-1. Clone the repository:   
+1. Clone the repository :   
 ```
 git clone https://github.com/el-moudni-hicham/radar-violation-detection-system.git
 ```    
-2. Navigate to the backend directory and run the following command to start the each Spring Boot project:   
+2. Navigate to the backend directory and run the following command to start the each Spring Boot project :   
 ```  
 ./mvnw spring-boot:run   
 ```    
-3. Navigate to the frontend directory and run the following command to install the required packages:   
+3. Navigate to the frontend directory and run the following command to install the required packages :   
 ```    
 npm install   
 ```    
-4. After the packages are installed, run the following command to start the Angular application:   
+4. After the packages are installed, run the following command to start the Angular application :   
 ```    
 ng serve   
 ```    
@@ -61,8 +61,7 @@ The following technologies and frameworks are used in this application:
  
 
 ## Project Architecture
-
-![projet-archi.png](projet-archi.png)
+<img width="90%" src="projet-archi.png">
 
 ## 2. Class Diagram
 
