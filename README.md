@@ -89,7 +89,7 @@ The application allows performing the following operations:
 
 ## Class Diagram
 
-<img src="backend.png" width="70%">
+<img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/blob/master/img.png?raw=true" width="70%">
 
 ## Backend Services
 
