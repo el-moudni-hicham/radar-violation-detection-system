@@ -74,7 +74,7 @@ The application allows performing the following operations:
 - View violations of a vehicle owner.
 - Modify and view radar data.
 - Modify and view vehicle and owner data.
-- Modify and view offense data.
+- Modify and view infraction data.
 
 ## Technical Architecture
 
