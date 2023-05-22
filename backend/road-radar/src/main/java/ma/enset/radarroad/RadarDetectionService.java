@@ -43,17 +43,17 @@ public class RadarDetectionService {
         int indexR = random.nextInt(radarList.size());
         Radar radar = radarList.get(indexR);
 
-        System.out.println(radar.getName());
+        System.out.println("Radar Name : " + radar.getName());
         int indexV = random.nextInt(vehicleList.size());
         Vehicle vehicle = vehicleList.get(indexV);
-        System.out.println(vehicle.getRegestrationNumber());
+        System.out.println("Vehicle RN : " +vehicle.getRegestrationNumber());
 
         NewData newData = new NewData();
         newData.setRadarId(radar.getId());
         newData.setRn(vehicle.getRegestrationNumber());
         newData.setVehicleSpeed(radar.getMaxSpeed() + new Random().nextInt(100));
 
-        System.out.println(newData.getVehicleSpeed());
+        System.out.println("Vehicle Speed : " +newData.getVehicleSpeed());
 
         this.restTemplate.exchange(
                 "http://localhost:8890/RADAR-SERVICE/api/radar/newInfraction",
@@ -61,6 +61,8 @@ public class RadarDetectionService {
                 new HttpEntity<>(newData),
                 String.class
         );
+
+        System.out.println("----------------------");
 
     }
 
