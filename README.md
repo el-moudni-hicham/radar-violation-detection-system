@@ -14,22 +14,19 @@ vehicle owners to view their own violations, providing them with easy access to 
 
 # Table of Contents
 - [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 - [Technologies Used](#technologies-used)
 - [Technical Architecture](#technical-architecture)
 - [Class Diagram](#class-diagram)
 - [Backend Services](#backend-services)
-
-- [Regestration Service](#regestration-service)
-- [Radar Service](#radar-service)
-- [Infraction Service](#infraction-service)
-- [Eureka Discovery Service](#eureka-discovery-service)
-- [Gateway Service](#gateway-service)
-- [Road Radar](#road-radar)
-
+    - [Regestration Service](#regestration-service)
+    - [Radar Service](#radar-service)
+    - [Infraction Service](#infraction-service)
+    - [Eureka Discovery Service](#eureka-discovery-service)
+    - [Gateway Service](#gateway-service)
+    - [Road Radar](#road-radar)
 - [Frontend with Angular](#frontend-with-angular)
-
 - [License](#license)
 
 
