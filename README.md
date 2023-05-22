@@ -79,10 +79,6 @@ The application allows performing the following operations:
 
 ## Technical Architecture
 
-a distributed system based on microservices. This application will enable the management and automation
-of the violation process related to speeding offenses detected by automatic radars. The system consists
-of three microservices.
-
 <img width="90%" src="projet-archi.png">
 
 ## Class Diagram
@@ -166,6 +162,8 @@ A vehicle is defined by its ID, regestration number, brand, fiscal power, and mo
              <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/77beb752-739f-47fd-845f-c666ea4ab362" alt="project example"/>
             </p>
  </td>
+    </tr>
+    <tr>
  <td >
           <h5 align="center">Find Vehicle By Id</h3>
           <p align="center">
@@ -182,6 +180,8 @@ A vehicle is defined by its ID, regestration number, brand, fiscal power, and mo
             </p>
                                                                                                                                                    
  </td>
+    </tr>
+    <tr>
  <td >
           <h5 align="center">Update Vehicle<h5>
           <p align="center">
