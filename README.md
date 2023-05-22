@@ -10,12 +10,14 @@ interface.
 ```
 
 ## Table of Contents       
-* [Getting Started](Getting-Started)
-* [Prerequisites](Prerequisites)
-* [Installation](Installation)
-* [Features](Features)
-* [Technologies Used](Technologies-Used)
+* [Getting Started](getting-started)
+* [Prerequisites](prerequisites)
+* [Installation](installation)
+* [Features](features)
+* [Technologies Used](technologies-used)
 * [License](license) 
+
+
 ## Getting Started    
 ### Prerequisites  
 Before running this application, you need to have the following software installed on your system:    
