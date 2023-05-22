@@ -218,14 +218,18 @@ Tests with `Postman`
 
  > c. SOAP :
  
-Tests with `SoapUI`
+
+
+ > d. GRPC :
+
+Tests with `BloomRPC`
 <table>
     <tr>
         <td>
             <h5 align="center">All Owners </h3>
                 <p align="center">
                     <img alt="project example"
-                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7a01b2b9-3807-43e1-884d-8c0cbfcbb994"/>
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/abc8437c-d043-4821-b684-0a27917cb13c"/>
                 </p>
         </td>
     </tr>
@@ -234,34 +238,8 @@ Tests with `SoapUI`
             <h5 align="center">Find Owner By Id</h3>
                 <p align="center">
                     <img alt="project example"
-                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/52bc6d85-1dc1-4f00-b9da-701d500a8b4a"/>
+                         src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7b33bad2-3ac7-415d-ab60-33d3ae23b08e"/>
                 </p>
-        </td>
-    </tr>
-</table>
-
- > d. GRPC :
-
-Tests with `BloomRPC`
-
-<table>
-    <tr>
-        <td>
-            <h5 align="center">All Owners</h3>
-                <p align="center">
-                    <img alt="project example"
-               src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/abc8437c-d043-4821-b684-0a27917cb13c"/>
-                </p>
-                
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <h5 align="center">Find Owner By Id</h3>
-            <p align="center">
-                    <img alt="project example"
-          src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/7b33bad2-3ac7-415d-ab60-33d3ae23b08e"/>
-            </p>
         </td>
     </tr>
 </table>
