@@ -332,6 +332,10 @@ the vehicle's speed, the radar's maximum speed limit, and the fine amount.
 </pre>
 
 ### Eureka Discovery Service 
+```
+server-side component in the Netflix OSS stack that allows services to register
+and discover each other in a microservices architecture.
+```
 - Service Structure
 <pre>
 ├───src
@@ -355,8 +359,10 @@ the vehicle's speed, the radar's maximum speed limit, and the fine amount.
 </pre>
 
 ### Gateway Service 
-Spring Cloud Gateway
-
+```
+Spring Cloud Gateway It provides a centralized entry point for routing and filtering requests
+to microservices in a distributed system, enabling dynamic and scalable routing based on various criteria.
+```
 - Service Structure
 <pre>
 ├───src
@@ -373,6 +379,10 @@ Spring Cloud Gateway
 </pre>
 
 ### Road Radar
+```
+A Java application that simulates a radar system generating random speeding violations
+and sending them to the Radar-Service.
+```
 
 - Service Structure
 <pre>
