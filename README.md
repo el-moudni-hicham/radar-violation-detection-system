@@ -194,6 +194,25 @@ A vehicle is defined by its ID, regestration number, brand, fiscal power, and mo
 
 
     - b. GraphQL :
+<table>
+<tr>
+<td >
+          <h5 align="center">All Vehicles with specific attributs </h3>
+          <p align="center">
+             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/e29db325-f14f-4d6a-9916-0ee1d1760da0" alt="project example"/>
+            </p>
+ </td>
+    </tr>
+    <tr>
+ <td >
+          <h5 align="center">Find Vehicle By Id with specific attributs</h3>
+          <p align="center">
+             <img src="https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/15f188ac-d384-455d-a8ed-91363143f97f" alt="project example"/>
+            </p>
+ </td>
+</tr>
+</table>
+
     - c. SOAP :
     - d. GRPC :
 
