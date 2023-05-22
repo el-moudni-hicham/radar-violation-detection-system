@@ -14,8 +14,8 @@ interface.
 * [Prerequisites](Prerequisites)
 * [Installation](Installation)
 * [Features](Features)
-* [Technologies Used](Technologies Used)
-* [License](License) 
+* [Technologies Used](Technologies-Used)
+* [License](license) 
 ## Getting Started    
 ### Prerequisites  
 Before running this application, you need to have the following software installed on your system:    
@@ -82,5 +82,5 @@ If you want to contribute to this project, please follow these steps:
 
 
 
-# Licence
+## Licence
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
