@@ -92,7 +92,7 @@ The application allows performing the following operations:
 
 The backend contains 5 services :
 
-### Regestration Service :
+### Regestration Service 
 
 ```
 Registration microservice manages vehicles owned by owners. Each vehicle belongs to a single owner.
@@ -270,7 +270,7 @@ Tests with `BloomRPC`
 
 ####
 
-### Radar Service :
+### Radar Service 
 
 ```
 Radar microservice responsible for managing radars handles radar entities defined
@@ -310,7 +310,7 @@ by their ID, maximum speed limit, and coordinates (longitude and latitude)
 │   │       └───templates
 </pre>
 
-### Infraction Service :
+### Infraction Service 
 
 ```
 Infraction microservice responsible for managing violations handles each violation, which is defined
@@ -525,5 +525,5 @@ Test
     </tr>
 </table>
 
-## Licence
+## License
 This project is licensed under the GPL-3.0 license - see the LICENSE file for details.
