@@ -444,6 +444,13 @@ Test
 </table>
 
 # Frontend with Angular
+
+## Video Demonstration
+
+https://github.com/el-moudni-hicham/radar-violation-detection-system/assets/85403056/46b887f1-c4a5-4ba0-9f0f-2dea18b884eb
+
+## Application Sceenshots
+
 <table>
     <tr>
         <td >
