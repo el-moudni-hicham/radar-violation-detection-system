@@ -1,0 +1,82 @@
+<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+  <a class="navbar-brand me-lg-5" [routerLink]="['']"><img class="navbar-brand-dark" src="assets/img/logo.png" alt="logo"> <img class="navbar-brand-light" src="assets/img/dark.svg" alt="Rich logo"></a>
+  <div class="d-flex align-items-center"><button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div>
+</nav>
+
+ <nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+    <div class="sidebar-inner px-4 pt-3">
+       <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+
+         <div class="d-flex align-items-center">
+           <div class="avatar-lg me-4"></div>
+           <div class="d-block">
+             <h2 class="h5 mb-3">Hi, Hicham El Moudi</h2>
+             <a [routerLink]="['/sign-in']" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+               <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+               </svg>
+               Sign Out
+             </a>
+           </div>
+         </div>
+
+          <div class="collapse-close d-md-none">
+             <a href="#sidebarMenu" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation">
+                <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                   <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+             </a>
+          </div>
+       </div>
+       <ul class="nav flex-column pt-3 pt-md-0">
+          <li class="nav-item"><a class="nav-link d-flex align-items-center"><span class="sidebar-icon"><img src="../../../assets/img/logo.png" height="20" width="20" alt="Logo"> </span><span class="mt-1 ms-1 sidebar-text"><b>V - RADAR</b></span></a></li>
+          <li class="nav-item active">
+             <a routerLink="dashboard" class="nav-link" *ngIf="authService.hasRole('ADMIN')">
+                <span class="sidebar-icon">
+                   <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                   </svg>
+                </span>
+                <span class="sidebar-text">Dashboard</span>
+             </a>
+          </li>
+
+         <li class="nav-item" *ngIf="authService.hasRole('ADMIN')">
+           <a routerLink="vehicles" class="nav-link" *ngIf="authService.hasRole('ADMIN')">
+                <span class="sidebar-icon">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                        style="fill:#000000;">
+                        <g fill="#9ca3af" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M26.206,12.559l-2.058,-5.88c-0.561,-1.602 -2.079,-2.679 -3.777,-2.679h-10.742c-1.698,0 -3.216,1.077 -3.776,2.678l-2.058,5.88c-1.099,0.723 -1.795,1.972 -1.795,3.346v7.096c0,1.105 0.895,2 2,2c1.105,0 2,-0.895 2,-2v-1.261c0,0 5.281,0.261 9,0.261c3.719,0 9,-0.261 9,-0.261v1.261c0,1.105 0.895,2 2,2c1.105,0 2,-0.895 2,-2v-7.096c0,-1.374 -0.697,-2.623 -1.794,-3.345zM6.595,10.613l1.146,-3.274c0.281,-0.802 1.038,-1.339 1.888,-1.339h10.742c0.85,0 1.607,0.537 1.888,1.339l1.146,3.274c0.18,0.515 -0.249,1.034 -0.788,0.947c-1.961,-0.317 -4.482,-0.56 -7.617,-0.56c-3.135,0 -5.656,0.243 -7.617,0.56c-0.539,0.087 -0.968,-0.432 -0.788,-0.947zM6.5,18c-0.828,0 -1.5,-0.672 -1.5,-1.5c0,-0.828 0.672,-1.5 1.5,-1.5c0.828,0 1.5,0.672 1.5,1.5c0,0.828 -0.672,1.5 -1.5,1.5zM18,17h-6c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1h6c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1zM23.5,18c-0.828,0 -1.5,-0.672 -1.5,-1.5c0,-0.828 0.672,-1.5 1.5,-1.5c0.828,0 1.5,0.672 1.5,1.5c0,0.828 -0.672,1.5 -1.5,1.5z"></path></g></g>
+                   </svg>
+                </span>
+             <span class="sidebar-text">Vehicles</span>
+           </a>
+         </li>
+          <li class="nav-item" *ngIf="authService.hasRole('ADMIN')">
+             <a routerLink="radars"  class="nav-link">
+                <span class="sidebar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                       style="fill:#000000;">
+                  <g fill="#9ca3af" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,3c-12.13281,0 -22,9.86719 -22,22c0,12.13281 9.86719,22 22,22c12.13281,0 22,-9.86719 22,-22c0,-5.70703 -2.17578,-10.89844 -5.75,-14.8125l-4.28125,4.25c2.49219,2.82031 4.03125,6.51172 4.03125,10.5625c0,7.69141 -5.59375,14.28906 -13.09375,15.65625c-0.30469,1.33594 -1.48047,2.34375 -2.90625,2.34375c-1.41797,0 -2.59375,-0.98828 -2.90625,-2.3125c-7.49609,-1.33203 -13.09375,-7.96484 -13.09375,-15.6875c0,-2.60156 0.57813,-4.99609 1.6875,-7.125c-0.41797,-0.51562 -0.6875,-1.16016 -0.6875,-1.875c0,-1.65234 1.34766,-3 3,-3c0.41797,0 0.82422,0.09375 1.1875,0.25c2.96484,-2.73047 6.78125,-4.25 10.8125,-4.25c4.05078,0 7.74219,1.53906 10.5625,4.03125l4.25,-4.28125c-3.91406,-3.57422 -9.10547,-5.75 -14.8125,-5.75zM25,11c-3.53125,0 -6.73828,1.26563 -9.34375,3.625c0.21875,0.41797 0.34375,0.87109 0.34375,1.375c0,1.65234 -1.34766,3 -3,3c-0.20312,0 -0.40234,-0.02344 -0.59375,-0.0625c-0.91797,1.80859 -1.40625,3.83984 -1.40625,6.0625c0,6.71094 4.82422,12.47266 11.3125,13.6875c0.48828,-0.99609 1.50391,-1.6875 2.6875,-1.6875c1.17578,0 2.19531,0.69922 2.6875,1.6875c6.5,-1.24219 11.3125,-7 11.3125,-13.6875c0,-3.5 -1.30469,-6.69922 -3.4375,-9.15625l-2.8125,2.84375c1.41016,1.72266 2.25,3.91406 2.25,6.3125c0,1.67969 -0.42187,3.26563 -1.15625,4.65625c0.09375,0.26563 0.15625,0.54688 0.15625,0.84375c0,1.38281 -1.11719,2.5 -2.5,2.5c-0.15625,0 -0.32031,-0.03516 -0.46875,-0.0625c-1.67969,1.27734 -3.76172,2.0625 -6.03125,2.0625c-5.51562,0 -10,-4.48437 -10,-10c0,-5.51562 4.48438,-10 10,-10c2.39844,0 4.58984,0.83984 6.3125,2.25l2.84375,-2.8125c-2.45703,-2.13281 -5.65625,-3.4375 -9.15625,-3.4375zM13,15c-0.55078,0 -1,0.44922 -1,1c0,0.55078 0.44922,1 1,1c0.55078,0 1,-0.44922 1,-1c0,-0.55078 -0.44922,-1 -1,-1zM25,17c-4.41016,0 -8,3.58984 -8,8c0,4.41016 3.58984,8 8,8c1.59766,0 3.09375,-0.47266 4.34375,-1.28125c-0.20312,-0.36328 -0.34375,-0.77344 -0.34375,-1.21875c0,-1.38281 1.11719,-2.5 2.5,-2.5c0.30078,0 0.57813,0.0625 0.84375,0.15625c0.41797,-0.96875 0.65625,-2.03516 0.65625,-3.15625c0,-1.84766 -0.63281,-3.55078 -1.6875,-4.90625l-4.375,4.40625c0.04297,0.16406 0.0625,0.32031 0.0625,0.5c0,1.10547 -0.89453,2 -2,2c-1.10547,0 -2,-0.89453 -2,-2c0,-1.10547 0.89453,-2 2,-2c0.21875,0 0.42969,0.03125 0.625,0.09375l4.28125,-4.40625c-1.35547,-1.05469 -3.05859,-1.6875 -4.90625,-1.6875zM25,39c-0.55078,0 -1,0.44922 -1,1c0,0.55078 0.44922,1 1,1c0.55078,0 1,-0.44922 1,-1c0,-0.55078 -0.44922,-1 -1,-1z"></path></g></g>
+                  </svg>
+
+                </span>
+                <span class="sidebar-text">Radars</span>
+             </a>
+          </li>
+         <li class="nav-item">
+           <a routerLink="infractions" class="nav-link">
+                <span class="sidebar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                       style="fill:#000000;">
+                    <g fill="#9ca3af" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M10,4.76172v54.23828h2h2h36h2h2v-54.23437l-6.00586,3l-4.00781,-2.00195l-3.99805,2l-4,-2l-3.99805,2l-4,-2l-3.99805,2l-4,-2l-3.99805,2zM19.99219,10.23633l4,2l3.99805,-2l4,2l3.99805,-2l4,2l4,-2l4.00586,1.99805l2.00586,-1v43.76563h-36v-43.76172l1.99414,0.99805zM21,16c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,17v4h18v-4zM21,24c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,25v4h11v-4zM21,32c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,33v4h15v-4zM42.13281,40v0.99609c-1.297,0.236 -2.34961,1.10372 -2.34961,2.51172c0,1.929 1.758,2.46566 2.875,3.09766c0.891,0.507 1.5,0.8107 1.5,1.4707c0,0.743 -0.45536,1.22461 -1.44336,1.22461c-0.868,0 -1.69514,-0.36895 -2.36914,-0.87695l-0.6875,1.7168c0.674,0.503 1.60261,0.8163 2.47461,0.9043v0.95508h1.38477v-0.98242c1.546,-0.235 2.48242,-1.14575 2.48242,-2.84375c0,-1.542 -1.14064,-2.38244 -2.80664,-3.27344c-1.048,-0.567 -1.66602,-0.86603 -1.66602,-1.45703c0,-0.429 0.55161,-0.70703 1.34961,-0.70703c0.937,0 1.55517,0.22281 2.20117,0.75781l0.51172,-1.81445c-0.581,-0.438 -1.28327,-0.65452 -2.07227,-0.72852v-0.95117zM18,46v4h15v-4z"></path></g></g>
+                  </svg>
+                </span>
+             <span class="sidebar-text">Infractions</span>
+           </a>
+         </li>
+
+        </ul>
+    </div>
+ </nav>

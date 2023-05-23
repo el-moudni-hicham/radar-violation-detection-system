@@ -1,0 +1,113 @@
+<div class="d-flex align-items-center m-2">
+  <h4><b>Vehicles / Owners</b></h4>
+</div>
+
+<ng-template #errors>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span class="fas fa-bullhorn me-1"></span>
+    <strong>{{ errMessage }}</strong>
+    <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</ng-template>
+
+<div class="row"  *ngIf="vehicles; else errors">
+  <div class="col-12 col-xl-8">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <div class="card border-0 shadow">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h2 class="fs-5 fw-bold mb-0">All Vehicles</h2>
+              </div>
+              <!--<div class="col text-end"><a href="#" class="btn btn-sm btn-primary">Add Vehicle</a></div>-->
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              <tr>
+                <th class="border-bottom" scope="col">Regestration Number</th>
+                <th class="border-bottom" scope="col">Brand</th>
+                <th class="border-bottom" scope="col">Model</th>
+                <th class="border-bottom" scope="col">FP</th>
+                <th class="border-bottom" scope="col">Owner</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let v of vehicles">
+                <th class="fw-bolder text-gray-500">{{v.regestrationNumber| slice:0:8 }}</th>
+                <td class="fw-bolder text-gray-500">{{v.brand}}</td>
+                <td class="fw-bolder text-gray-500">{{v.model}}</td>
+                <td class="fw-bolder text-gray-500">{{v.fiscalPower}} </td>
+                <td class="fw-bolder text-gray-500">
+                  <a (click)="showOwner(v)" data-bs-toggle="tooltip" title="Show Owner">
+                    <svg height="25" style="fill:#000000;" viewBox="0,0,256,256" width="25" x="0px" xmlns="http://www.w3.org/2000/svg"
+                         y="0px">
+                      <g fill="#1f2937" fill-rule="nonzero" font-family="none" font-size="none" font-weight="none"
+                         stroke="none" stroke-dasharray="" stroke-dashoffset="0" stroke-linecap="butt"
+                         stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="1" style="mix-blend-mode: normal"
+                         text-anchor="none">
+                        <g transform="scale(8.53333,8.53333)">
+                          <path
+                            d="M15,2c-3.314,0 -6,2.686 -6,6v1c0,3.314 2.686,6 6,6c3.314,0 6,-2.686 6,-6v-1c0,-3.314 -2.686,-6 -6,-6zM25.02148,12.32617c-1.2825,0 -2.56406,0.50563 -3.53906,1.51563c-1.96,2.01 -1.96,5.28859 0,7.30859c0.05,0.05 0.11969,0.10992 0.17969,0.16992c0.41,0.4 0.88961,0.79 1.34961,1v1l1.17969,1.48047l-1.25,1.29102l1.07031,1.22852l-1,1l2,2l2,-2v-6c0.46,-0.21 0.96109,-0.6 1.37109,-1c0.06,-0.06 0.12969,-0.11992 0.17969,-0.16992c1.96,-2.02 1.96,-5.29859 0,-7.30859c-0.975,-1.01 -2.25852,-1.51562 -3.54102,-1.51562zM25.02148,14.25195c0.3775,0 0.75602,0.14922 1.04102,0.44922c0.58,0.59 0.58,1.55039 0,2.15039c-0.57,0.59 -1.51008,0.59 -2.08008,0c-0.58,-0.6 -0.58,-1.56039 0,-2.15039c0.285,-0.3 0.66156,-0.44922 1.03906,-0.44922zM15.00195,18.00195c-4.01,0 -9.15086,2.16984 -10.63086,4.08984c-0.91,1.19 -0.03906,2.91016 1.46094,2.91016h13.16016h2.03906l-0.36914,-0.46094v-1.74023c-1.36,-1.08 -2.30055,-2.64945 -2.56055,-4.43945c-1.06,-0.23 -2.10961,-0.35937 -3.09961,-0.35937z"></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </a>
+                  <!--<button (click)="showOwner(v)" class="btn btn-primary btn-sm">Show Owner</button>-->
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="m-3">
+              <ul class="pagination pagination-sm">
+                <li class="page-item">
+                  <a (click)="previousPage()" aria-label="Previous" class="page-link">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <p class="page-link">Page {{ currentPage + 1 }} of {{ totalPages }}</p>
+                <li class="page-item">
+                  <a (click)="nextPage()" aria-label="Next" class="page-link">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isOwnerInfoVisible" class="col-12 col-xl-4">
+    <div class="col-12 px-0 mb-4">
+      <div class="card border-0 shadow">
+        <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
+          <div class="d-block">
+            <div class="h4 fw-normal mb-2 "><b>Owner Informations</b></div>
+
+            <h2 class="h6 m-2 text-success">
+              <b>  {{ selectedVehicleOwner.name }} </b>
+            </h2>
+
+          </div>
+
+        </div>
+        <div class="card-body p-2 m-2">
+          <div class="h6">
+            <b class="text-danger">Email : </b><br/>
+            {{ selectedVehicleOwner.email }}<br/><br/>
+
+            <b class="text-danger">Birth Date : </b><br/>
+            {{ selectedVehicleOwner.birthDate | date:'yyyy-MM-dd' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

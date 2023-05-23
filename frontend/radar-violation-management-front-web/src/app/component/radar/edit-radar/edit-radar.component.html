@@ -1,0 +1,71 @@
+<div class="d-flex align-items-center m-2">
+  <h4 ><b>Edit Radar Number &laquo; {{radar.id}} &raquo;</b></h4>
+</div>
+
+<div class="row m-lg-3">
+  <div class="col-16 col-xl-10">
+    <div class="card card-body border-0 shadow mb-4">
+      <h2 class="h5 mb-4">General information</h2>
+      <form [formGroup]="radarFormGroup" (ngSubmit)="handleEditRadar()">
+        <div class="row">
+
+
+          <div class="col-md-6 mb-3">
+            <label for="usernameValidate">Radar Name</label>
+            <input type="text" placeholder="Radar name" [ngClass]="radarFormGroup.controls['name'].errors && radarFormGroup.controls['name'].touched == true?'form-control is-invalid':'form-control is-valid'" id="usernameValidate" formControlName="name" required>
+            <div [ngClass]="radarFormGroup.controls['name'].errors && radarFormGroup.controls['name'].touched == true?'invalid-feedback':'valid-feedback'">
+              <p *ngIf="radarFormGroup.controls['name'].errors && radarFormGroup.controls['name'].touched">
+                {{radarService.getErrorMessage('Name', radarFormGroup.controls['name'].errors)}}
+              </p>
+              <p *ngIf="!radarFormGroup.controls['name'].errors && radarFormGroup.controls['name'].touched">Looks Good !</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="usernameValidate">Max Speed</label>
+            <input type="text"  placeholder="Radar name" [ngClass]="radarFormGroup.controls['maxSpeed'].errors && radarFormGroup.controls['maxSpeed'].touched == true?'form-control is-invalid':'form-control is-valid'" id="usernameValidate" formControlName="maxSpeed" required>
+            <div [ngClass]="radarFormGroup.controls['maxSpeed'].errors && radarFormGroup.controls['maxSpeed'].touched == true?'invalid-feedback':'valid-feedback'">
+              <p *ngIf="radarFormGroup.controls['maxSpeed'].errors && radarFormGroup.controls['maxSpeed'].touched">
+                {{radarService.getErrorMessage('Max Speed ', radarFormGroup.controls['maxSpeed'].errors)}}
+              </p>
+              <p *ngIf="!radarFormGroup.controls['maxSpeed'].errors && radarFormGroup.controls['maxSpeed'].touched">Looks Good !</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div><label>Longitude</label>
+              <input class="form-control" formControlName="longitude" type="text" placeholder="Radar longitude" [ngClass]="radarFormGroup.controls['longitude'].errors && radarFormGroup.controls['longitude'].touched == true?'form-control is-invalid':'form-control is-valid'" required>
+              <div [ngClass]="radarFormGroup.controls['longitude'].errors && radarFormGroup.controls['longitude'].touched == true?'invalid-feedback':'valid-feedback'">
+                <p *ngIf="radarFormGroup.controls['longitude'].errors && radarFormGroup.controls['longitude'].touched">
+                  {{radarService.getErrorMessage('Longitude', radarFormGroup.controls['longitude'].errors)}}
+                </p>
+                <p *ngIf="!radarFormGroup.controls['longitude'].errors && radarFormGroup.controls['longitude'].touched">Looks Good !</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div><label>Latitude</label>
+              <input class="form-control" formControlName="latitude" type="text" placeholder="Radar latitude"[ngClass]="radarFormGroup.controls['latitude'].errors && radarFormGroup.controls['latitude'].touched == true?'form-control is-invalid':'form-control is-valid'" required>
+              <div [ngClass]="radarFormGroup.controls['latitude'].errors && radarFormGroup.controls['latitude'].touched == true?'invalid-feedback':'valid-feedback'">
+                <p *ngIf="radarFormGroup.controls['latitude'].errors && radarFormGroup.controls['latitude'].touched">
+                  {{radarService.getErrorMessage('Latitude', radarFormGroup.controls['latitude'].errors)}}
+                </p>
+                <p *ngIf="!radarFormGroup.controls['latitude'].errors && radarFormGroup.controls['latitude'].touched">Looks Good !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3"><button [disabled]="this.radarFormGroup.invalid" class="btn btn-gray-800 mt-2 animate-up-2" type="submit">Edit</button></div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+

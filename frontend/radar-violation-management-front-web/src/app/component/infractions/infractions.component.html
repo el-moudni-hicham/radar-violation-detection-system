@@ -1,0 +1,157 @@
+<div class="d-flex align-items-center m-2">
+  <h4 ><b>All Infractions</b></h4>
+</div>
+
+<ng-template #errors>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span class="fas fa-bullhorn me-1"></span>
+    <strong>{{ errMessage }}</strong>
+    <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</ng-template>
+
+<!-- Table -->
+
+<div class="row"  *ngIf="infractions; else errors">
+  <div class="col-12 col-xl-8">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <div class="card border-0 shadow">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h2 class="fs-5 fw-bold mb-0">Infractions</h2>
+              </div>
+              <!--<div class="col text-end"><a href="#" class="btn btn-sm btn-primary">Add Vehicle</a></div>-->
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              <tr >
+
+
+                <th class="border-bottom" scope="col">#</th>
+                <th class="border-bottom" scope="col">Date</th>
+                <!--<th class="border-bottom" scope="col">Vehicle RN</th>-->
+                <th class="border-bottom" scope="col">V Owner</th>
+                <th class="border-bottom" scope="col">Amount</th>
+                <th class="border-bottom" scope="col">Paid</th>
+                <th class="border-bottom" scope="col">Acts</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let i of infractions" >
+
+                <td>{{i.id}}</td>
+                <td>{{i.date | date:'yy-MM-dd  [HH:mm:ss]' }}</td>
+                <!--<td>{{i.vehicleMatricule| slice:0:8 }}</td>-->
+                <td>{{i.vehicle.owner.name}}</td>
+                <td>{{i.infractionAmount}}</td>
+                <td>
+                  <button (click)="handleSetPayed(i)" [disabled]="i.paid" class="btn btn-sm">
+                    <span *ngIf="i.paid== true">✅</span>
+                    <span *ngIf="i.paid == false">❌</span>
+                  </button>
+                </td>
+                <td>
+                  <a (click)="showInfraction(i)" data-bs-toggle="tooltip" title="Show Infraction">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256"
+                         style="fill:#0e8c11;">
+                      <g fill="#0e8c11" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M10,4.76172v54.23828h2h2h36h2h2v-54.23437l-6.00586,3l-4.00781,-2.00195l-3.99805,2l-4,-2l-3.99805,2l-4,-2l-3.99805,2l-4,-2l-3.99805,2zM19.99219,10.23633l4,2l3.99805,-2l4,2l3.99805,-2l4,2l4,-2l4.00586,1.99805l2.00586,-1v43.76563h-36v-43.76172l1.99414,0.99805zM21,16c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,17v4h18v-4zM21,24c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,25v4h11v-4zM21,32c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM28,33v4h15v-4zM42.13281,40v0.99609c-1.297,0.236 -2.34961,1.10372 -2.34961,2.51172c0,1.929 1.758,2.46566 2.875,3.09766c0.891,0.507 1.5,0.8107 1.5,1.4707c0,0.743 -0.45536,1.22461 -1.44336,1.22461c-0.868,0 -1.69514,-0.36895 -2.36914,-0.87695l-0.6875,1.7168c0.674,0.503 1.60261,0.8163 2.47461,0.9043v0.95508h1.38477v-0.98242c1.546,-0.235 2.48242,-1.14575 2.48242,-2.84375c0,-1.542 -1.14064,-2.38244 -2.80664,-3.27344c-1.048,-0.567 -1.66602,-0.86603 -1.66602,-1.45703c0,-0.429 0.55161,-0.70703 1.34961,-0.70703c0.937,0 1.55517,0.22281 2.20117,0.75781l0.51172,-1.81445c-0.581,-0.438 -1.28327,-0.65452 -2.07227,-0.72852v-0.95117zM18,46v4h15v-4z"></path></g></g>
+                    </svg>
+                  </a>
+                  <a (click)="generatePDF(i)" data-bs-toggle="tooltip" title="Download PDF">
+                    <span class="sidebar-icon">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256"
+                        style="fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M40,45h-32v-42h22l10,10z" fill="#dd0020"></path><path d="M38.5,14h-9.5v-9.5z" fill="#fbe9e7"></path><path d="M15.81,29.5v3.5h-2.01v-9.953h3.391c0.984,0 1.77,0.306 2.355,0.916c0.585,0.61 0.878,1.403 0.878,2.379c0,0.976 -0.29,1.745 -0.868,2.311c-0.578,0.566 -1.381,0.847 -2.407,0.847zM15.81,27.825h1.381c0.383,0 0.679,-0.125 0.889,-0.376c0.21,-0.251 0.314,-0.615 0.314,-1.094c0,-0.497 -0.107,-0.892 -0.321,-1.187c-0.214,-0.293 -0.501,-0.442 -0.861,-0.447h-1.402zM21.764,33v-9.953h2.632c1.162,0 2.089,0.369 2.778,1.107c0.691,0.738 1.043,1.75 1.057,3.035v1.613c0,1.308 -0.346,2.335 -1.035,3.079c-0.692,0.747 -1.643,1.119 -2.855,1.119zM23.773,24.722v6.61h0.602c0.67,0 1.142,-0.177 1.415,-0.53c0.273,-0.353 0.417,-0.962 0.431,-1.828v-1.729c0,-0.93 -0.13,-1.578 -0.39,-1.944c-0.26,-0.367 -0.702,-0.56 -1.326,-0.578h-0.732zM34.807,28.939h-3.124v4.061h-2.01v-9.953h5.51v1.675h-3.5v2.55h3.124z" fill="#ffebee"></path></g></g>
+                    </svg>
+                </span>
+                  </a>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="m-3">
+              <ul class="pagination pagination-sm">
+                <li class="page-item">
+                  <a class="page-link" aria-label="Previous" (click)="previousPage()" >
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item" >
+                  <p class="page-link" >Page {{ currentPage + 1 }} of {{ totalPages }}</p>
+                <li class="page-item">
+                  <a class="page-link" aria-label="Next" (click)="nextPage()">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-12 col-xl-4" *ngIf="isVehicleInfoVisible">
+
+    <div class="col-12 px-0 mb-4">
+      <div class="card border-0 shadow">
+        <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
+          <div class="d-block">
+            <div class="h4 fw-normal mb-2 "><b>Vehicle Informations</b></div>
+            <h2 class="h6  text-success">
+              <b>{{selectedVehicleInfraction.regestrationNumber| slice:0:8 }} </b>
+            </h2>
+            id : <b> {{selectedVehicleInfraction.id}} </b> <br/>
+            <b class="text-danger">Brand : </b> {{selectedVehicleInfraction.brand}} <br/>
+            <b class="text-danger">Model : </b> {{selectedVehicleInfraction.model}}<br/>
+            <b class="text-danger">Fiscal Power : </b> {{selectedVehicleInfraction.fiscalPower}}<br/>
+          </div>
+
+        </div>
+        <div class="card-body p-2 m-2">
+          <div class="h6">
+            <div class="h5 fw-normal mb-2 "><b>Owner </b></div>
+            <h4 class="h6  text-success">
+              <b>{{selectedVehicleInfraction.owner.name}}  </b>
+            </h4>
+            id : <b> {{selectedVehicleInfraction.owner.id}} </b> <br/>
+            <b class="text-danger">Birth Date : </b> {{selectedVehicleInfraction.owner.birthDate| date:'yyyy-MM-dd' }} <br/>
+            <b class="text-danger">Email : </b> {{selectedVehicleInfraction.owner.email}}<br/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 px-0 mb-4" >
+      <div class="card border-0 shadow" >
+        <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
+          <div class="d-block">
+            <div class="h4 fw-normal mb-2 "><b>Radar Informations</b></div>
+
+            <h2 class="h6 m-2 text-success">
+              <b> {{selectedRadarInfraction.name}} </b>
+            </h2>
+
+          </div>
+
+        </div>
+        <div class="card-body p-2 m-2">
+          <div class="h6">
+            <b>  </b>
+            id : <b> {{selectedRadarInfraction.id}} </b> <br/>
+            <b class="text-danger">Max Speed : </b> {{selectedRadarInfraction.maxSpeed}} <br/>
+            <b class="text-danger">Longitude : </b> {{selectedRadarInfraction.longitude}}<br/>
+            <b class="text-danger">Latitude : </b> {{selectedRadarInfraction.latitude}}<br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
