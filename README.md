@@ -429,7 +429,7 @@ and sending them to the Radar-Service.
 │   │       └───templates
 </pre>
 
-Test
+* Test
 
 <table>
     <tr>
